@@ -102,7 +102,7 @@ impl Line {
         if let Some(word_pos) = self.text.as_str().find("nine") {
             if word_pos < first_pos {
                 first_value = 9;
-                first_pos = word_pos;
+                //       first_pos = word_pos;
             }
         }
 
@@ -171,12 +171,12 @@ impl Line {
         if let Some(word_pos) = self.text.as_str().rfind("nine") {
             if word_pos > last_pos {
                 last_value = 9;
-                last_pos = word_pos;
+                //      last_pos = word_pos;
             }
         }
 
-        println!("{:?}", self.text);
-        println!("{first_value} + {last_value}");
+        //println!("{:?}", self.text);
+        //println!("{first_value} + {last_value}");
         let calibration_value = format!("{first_value}{last_value}");
 
         Ok(calibration_value.parse::<i64>().unwrap())
